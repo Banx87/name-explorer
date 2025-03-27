@@ -10,8 +10,7 @@ try {
     die();
 }
 
-// TEST
+// TEST CONNECTION
 // $stmt = $pdo->prepare('SELECT * FROM `names`');
 // $stmt->execute();
-
 // var_dump($stmt->fetch(PDO::FETCH_ASSOC));
