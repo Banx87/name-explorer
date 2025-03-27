@@ -2,17 +2,7 @@
 <?php
 $char = strtoupper((string) ($_GET['char'] ?? ''));
 
-if (mb_strlen($char) > 1) {
-    $char = $char[0];
-}
-
-$stmt = $pdo->prepare('SELECT DISTINCT `name` FROM `names` WHERE `name` LIKE :expr ORDER BY `year` ASC');
-$stmt->bindValue(':expr', "{$char}%", PDO::PARAM_STR);
-$stmt->execute();
-$names = [];
-while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    $names[] = $result['name'];
-}
+$names = fetch_names_by_initial($char);
 ?>
 
 <?php require __DIR__ . '/views/header.php'; ?>
