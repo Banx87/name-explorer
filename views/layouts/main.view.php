@@ -19,7 +19,8 @@
         <p>Explore and find names</p>
         <nav>
             <?php foreach ($alphabet as $character) { ?>
-                <a href="char.php?<?php echo http_build_query(['char' => $character]); ?>">
+                <a href="char.php?<?php echo http_build_query(['char' => $character]); ?>"
+                    <?php if (!empty($char) && $char === $character): ?> class="active" <?php endif; ?>>
                     <?php echo e($character) ?>
                 </a>
             <?php  } ?>
