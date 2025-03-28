@@ -1,22 +1,12 @@
-<?php require __DIR__ . '/inc/all.inc.php'; ?>
-<?php
+<?php require __DIR__ . '/inc/all.inc.php';
+
 $char = strtoupper((string) ($_GET['char'] ?? ''));
 if (strlen($char) === 0) {
     header("Location: index.php");
 }
 $names = fetch_names_by_initial($char);
-?>
 
-<?php require __DIR__ . '/views/header.php'; ?>
-
-<ul>
-    <?php foreach ($names as $name): ?>
-        <li>
-            <a href="name.php?<?php echo http_build_query(['name' => $name]); ?>">
-                <?php echo e($name); ?>
-            </a>
-        </li>
-    <?php endforeach; ?>
-</ul>
-
-<?php require __DIR__ . '/views/footer.php'; ?>
+render('char.view', [
+    'char' => $char,
+    'names' => $names
+]);
