@@ -1,0 +1,31 @@
+/* a.active {
+	background-color: transparent;
+	color: #343434;
+} */
+
+a:hover,
+a.active {
+	background: var(--accent);
+	color: #fff !important;
+}
+
+.pagination_link.button {
+	display: inline-block;
+	padding: 10px 15px;
+	margin: 5px;
+	text-decoration: none;
+	color: white;
+	background-color: #007bff;
+	border: none;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.pagination_link.button:hover {
+	background-color: #0f2a47;
+}
+.pagination_link.button.active {
+	background-color: #0f2a47;
+	text-decoration: underline;
+	text-underline-offset: 0.25rem;
+}
