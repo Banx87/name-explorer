@@ -10,5 +10,6 @@ $nameset = fetch_data_by_name($name);
 
 render('name.view', [
     'name' => $name,
+    'char' => $name[0],
     'nameset' => $nameset
 ]);
