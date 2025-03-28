@@ -1,7 +1,6 @@
 <?php require __DIR__ . '/inc/all.inc.php'; ?>
 <?php
 $char = strtoupper((string) ($_GET['char'] ?? ''));
-
 $names = fetch_names_by_initial($char);
 ?>
 

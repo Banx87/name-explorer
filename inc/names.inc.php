@@ -19,3 +19,13 @@ function fetch_names_by_initial(string $char): array
     }
     return $names;
 }
+
+function fetch_data_by_name(string $name): array
+{
+    global $pdo;
+
+    $stmt = $pdo->prepare('SELECT `year`, `count` FROM `names` WHERE `name` = :name ORDER BY `year` ASC');
+    $stmt->bindValue(':name', "{$name}", PDO::PARAM_STR);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}

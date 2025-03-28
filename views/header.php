@@ -1,7 +1,5 @@
 <?php
-
 $alphabet = gen_alphabet();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
