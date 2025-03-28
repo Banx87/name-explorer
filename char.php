@@ -1,8 +1,10 @@
 <?php require __DIR__ . '/inc/all.inc.php';
 
 $char = strtoupper((string) ($_GET['char'] ?? ''));
-if (strlen($char) === 0) {
+$abc = gen_alphabet();
+if (strlen($char) === 0 || !in_array($char, $abc)) {
     header("Location: index.php");
+    die();
 }
 
 $page = (int) ($_GET["page"] ?? 1);
